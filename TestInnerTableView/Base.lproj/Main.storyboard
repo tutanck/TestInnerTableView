@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wCM-UM-a0g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -97,7 +97,7 @@
         <!--Table View Controller-->
         <scene sceneID="CTe-Px-gfI">
             <objects>
-                <tableViewController id="wCM-UM-a0g" sceneMemberID="viewController">
+                <tableViewController id="wCM-UM-a0g" customClass="TableViewController" customModule="TestInnerTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xcd-hn-6Fm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W1b-6a-KnS" id="lSL-T5-F9o">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tab" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aii-dw-OVd">
@@ -122,18 +122,18 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="532" id="Nxe-Kk-l98">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="532" id="Nxe-Kk-l98" customClass="TableViewCell" customModule="TestInnerTableView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="375" height="532"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nxe-Kk-l98" id="wl8-Hx-6nj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="531.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gsb-JV-WVP">
                                                     <rect key="frame" x="16" y="16" width="343" height="499.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ke1-Rv-ZGp">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCellSPlus" id="Ke1-Rv-ZGp" customClass="TableViewCellSPlus" customModule="TestInnerTableView" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ke1-Rv-ZGp" id="L5R-oG-WvW">
@@ -176,6 +176,11 @@
                                                                     <constraint firstItem="b95-on-X27" firstAttribute="leading" secondItem="L5R-oG-WvW" secondAttribute="leading" id="vQ6-cF-2eS"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="btn" destination="755-LA-64R" id="XCk-O5-Zsa"/>
+                                                                <outlet property="img" destination="b95-on-X27" id="hk9-U5-tbo"/>
+                                                                <outlet property="lbl" destination="fIO-hQ-QCR" id="42c-HU-4em"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
@@ -196,10 +201,13 @@
                             <outlet property="delegate" destination="wCM-UM-a0g" id="Fq4-rI-nFY"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="mtableView" destination="gsb-JV-WVP" id="N8d-Ud-CNZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRy-cH-lKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1068" y="20"/>
         </scene>
     </scenes>
 </document>
